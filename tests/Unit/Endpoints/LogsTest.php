@@ -25,3 +25,19 @@ it('gets logs with query parameters', function () {
 
     Http::assertSent(fn ($request) => $request->data() === ['room' => 'my-room', 'start_time' => '2024-01-01']);
 });
+
+it('gets api logs', function () {
+    $dailyco = new Dailyco('test-key');
+    $dailyco->apiLogs();
+
+    Http::assertSent(fn ($request) => $request->method() === 'GET' && str_contains($request->url(), 'api.daily.co/v1/logs/api'));
+});
+
+it('gets api logs with query parameters', function () {
+    $dailyco = new Dailyco('test-key');
+    $dailyco->apiLogs(['start_time' => '2024-01-01', 'end_time' => '2024-01-31']);
+
+    Http::assertSent(fn ($request) => $request->method() === 'GET'
+        && str_contains($request->url(), 'api.daily.co/v1/logs/api')
+        && $request->data() === ['start_time' => '2024-01-01', 'end_time' => '2024-01-31']);
+});
