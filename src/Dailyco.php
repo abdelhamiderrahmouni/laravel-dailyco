@@ -44,7 +44,7 @@ class Dailyco
      */
     protected function put(string $endpoint, array $data = [], array $headers = [])
     {
-        return $this->request('POST', $endpoint, $data, $headers);
+        return $this->request('PUT', $endpoint, $data, $headers);
     }
 
     /**

@@ -23,7 +23,7 @@ trait MeetingTokens
      */
     public function meetingToken(string $meetingToken, array $data = [])
     {
-        $meetingToken = urlencode($meetingToken);
+        $meetingToken = rawurlencode($meetingToken);
 
         return $this->get("meeting-tokens/{$meetingToken}", $data);
     }

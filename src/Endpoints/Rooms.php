@@ -31,7 +31,7 @@ trait Rooms
      */
     public function room(string $roomName, array $data = [])
     {
-        $roomName = urlencode($roomName);
+        $roomName = rawurlencode($roomName);
 
         return $this->get("rooms/{$roomName}", $data);
     }
@@ -41,7 +41,7 @@ trait Rooms
      */
     public function updateRoom(string $roomName, array $data = [])
     {
-        $roomName = urlencode($roomName);
+        $roomName = rawurlencode($roomName);
 
         return $this->post("rooms/{$roomName}", $data);
     }
@@ -51,7 +51,7 @@ trait Rooms
      */
     public function deleteRoom(string $roomName, array $data = [])
     {
-        $roomName = urlencode($roomName);
+        $roomName = rawurlencode($roomName);
 
         return $this->delete("rooms/{$roomName}", $data);
     }

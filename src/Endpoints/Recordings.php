@@ -23,7 +23,7 @@ trait Recordings
      */
     public function recording(string $recordingId, array $data = [])
     {
-        $recordingId = urlencode($recordingId);
+        $recordingId = rawurlencode($recordingId);
 
         return $this->get("recordings/{$recordingId}", $data);
     }
@@ -33,7 +33,7 @@ trait Recordings
      */
     public function deleteRecording(string $recordingId, array $data = [])
     {
-        $recordingId = urlencode($recordingId);
+        $recordingId = rawurlencode($recordingId);
 
         return $this->delete("recordings/{$recordingId}", $data);
     }
@@ -43,7 +43,7 @@ trait Recordings
      */
     public function recordingAccessLink(string $recordingId, array $data = [])
     {
-        $recordingId = urlencode($recordingId);
+        $recordingId = rawurlencode($recordingId);
 
         return $this->get("recordings/{$recordingId}/access-link", $data);
     }
@@ -53,7 +53,7 @@ trait Recordings
      */
     public function recordingDownload(string $shareToken, array $data = [])
     {
-        $shareToken = urlencode($shareToken);
+        $shareToken = rawurlencode($shareToken);
 
         return $this->get("recordings/{$shareToken}/download", $data);
     }
@@ -63,7 +63,7 @@ trait Recordings
      */
     public function createRecordingCompositesRecipe(string $recordingId, array $data = [])
     {
-        $recordingId = urlencode($recordingId);
+        $recordingId = rawurlencode($recordingId);
 
         return $this->post("recordings/{$recordingId}/composites", $data);
     }
@@ -73,7 +73,7 @@ trait Recordings
      */
     public function recordingComposites(string $recordingId, array $data = [])
     {
-        $recordingId = urlencode($recordingId);
+        $recordingId = rawurlencode($recordingId);
 
         return $this->get("recordings/{$recordingId}/composites", $data);
     }
