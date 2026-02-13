@@ -12,8 +12,12 @@ use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException;
 trait Presence
 {
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * This endpoint provides near-real-time participant presence data
+     * @see https://docs.daily.co/reference/rest-api/presence
+     * ---
+     *
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function presence(array $data = [])
     {

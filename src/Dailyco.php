@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Http;
 class Dailyco
 {
     use Endpoints\Logs;
-    use Endpoints\MeetingAnalytics;
+    use Endpoints\Meetings;
     use Endpoints\MeetingTokens;
     use Endpoints\Presence;
     use Endpoints\Recordings;
@@ -24,8 +24,8 @@ class Dailyco
     ) {}
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function get(string $endpoint, array $data = [], array $headers = [])
     {
@@ -33,8 +33,8 @@ class Dailyco
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function post(string $endpoint, array $data = [], array $headers = [])
     {
@@ -42,8 +42,8 @@ class Dailyco
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function put(string $endpoint, array $data = [], array $headers = [])
     {
@@ -51,8 +51,8 @@ class Dailyco
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function patch(string $endpoint, array $data = [], array $headers = [])
     {
@@ -60,8 +60,8 @@ class Dailyco
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function delete(string $endpoint, array $data = [], array $headers = [])
     {
@@ -69,8 +69,8 @@ class Dailyco
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     protected function request(string $method, string $endpoint, array $data = [], array $headers = [])
     {

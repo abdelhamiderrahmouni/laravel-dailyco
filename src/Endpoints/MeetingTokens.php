@@ -12,8 +12,8 @@ use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException;
 trait MeetingTokens
 {
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function createMeetingToken(array $data = [])
     {
@@ -21,8 +21,8 @@ trait MeetingTokens
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function meetingToken(string $meetingToken, array $data = [])
     {

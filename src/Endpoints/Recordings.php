@@ -12,8 +12,8 @@ use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException;
 trait Recordings
 {
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function recordings(array $data = [])
     {
@@ -21,8 +21,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function recording(string $recordingId, array $data = [])
     {
@@ -32,8 +32,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function deleteRecording(string $recordingId, array $data = [])
     {
@@ -43,8 +43,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function recordingAccessLink(string $recordingId, array $data = [])
     {
@@ -54,8 +54,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function recordingDownload(string $shareToken, array $data = [])
     {
@@ -65,8 +65,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function createRecordingCompositesRecipe(string $recordingId, array $data = [])
     {
@@ -76,8 +76,8 @@ trait Recordings
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function recordingComposites(string $recordingId, array $data = [])
     {

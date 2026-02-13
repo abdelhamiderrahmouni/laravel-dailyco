@@ -12,8 +12,8 @@ use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException;
 trait Rooms
 {
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function rooms(array $data = [])
     {
@@ -21,8 +21,8 @@ trait Rooms
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function createRoom(array $data = [])
     {
@@ -30,8 +30,8 @@ trait Rooms
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function room(string $roomName, array $data = [])
     {
@@ -41,8 +41,8 @@ trait Rooms
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function updateRoom(string $roomName, array $data = [])
     {
@@ -52,8 +52,8 @@ trait Rooms
     }
 
     /**
-     * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
-     * @throws ForbiddenException
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
     public function deleteRoom(string $roomName, array $data = [])
     {

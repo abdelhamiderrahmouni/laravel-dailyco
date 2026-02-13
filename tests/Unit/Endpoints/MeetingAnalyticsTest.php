@@ -14,14 +14,14 @@ afterEach(function () {
 
 it('gets meeting analytics', function () {
     $dailyco = new Dailyco('test-key');
-    $dailyco->meetingAnalytics();
+    $dailyco->meetings();
 
     Http::assertSent(fn ($request) => $request->method() === 'GET' && str_contains($request->url(), 'api.daily.co/v1/meetings'));
 });
 
 it('gets meeting analytics with query parameters', function () {
     $dailyco = new Dailyco('test-key');
-    $dailyco->meetingAnalytics(['room' => 'my-room', 'from' => '2024-01-01']);
+    $dailyco->meetings(['room' => 'my-room', 'from' => '2024-01-01']);
 
     Http::assertSent(fn ($request) => $request->data() === ['room' => 'my-room', 'from' => '2024-01-01']);
 });

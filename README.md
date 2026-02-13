@@ -145,13 +145,20 @@ use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
 $logs = DailycoFacade::logs();
 ```
 
+***Get API logs**
+```php
+use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
+
+$apiLogs = DailycoFacade::apiLogs();
+```
+
 ### Meeting Analytics
 
 **Retrieve meeting analytics**
 ```php
 use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
 
-$analytics = DailycoFacade::meetingAnalytics();
+$analytics = DailycoFacade::meetings();
 ```
 
 ### Presence
