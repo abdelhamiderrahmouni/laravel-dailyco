@@ -152,13 +152,27 @@ use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
 $apiLogs = DailycoFacade::apiLogs();
 ```
 
-### Meeting Analytics
+### Meetings
 
-**Retrieve meeting analytics**
+**Get meetings**
 ```php
 use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
 
-$analytics = DailycoFacade::meetings();
+$meetings = DailycoFacade::meetings();
+```
+
+**Get a meeting**
+```php
+use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
+
+$meeting = DailycoFacade::meeting('meetingId');
+```
+
+**Get meeting participants**
+```php
+use AbdelhamidErrahmouni\LaravelDailyco\DailycoFacade;
+
+$participants = DailycoFacade::meetingParticipants('meetingId');
 ```
 
 ### Presence
