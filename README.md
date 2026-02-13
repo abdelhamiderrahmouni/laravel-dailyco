@@ -168,13 +168,14 @@ $participants = DailycoFacade::presence();
 This package will throw an exception whenever a non 200 response is returned from Daily.co's API. 
 The full list of exceptions is provided below.
 
-| **Status Code**         | **Exception**                                                            |
-|-------------------------|--------------------------------------------------------------------------|
-| 400 (Bad Request)       | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\BadRequestException`      |
-| 401 (Unauthorized)      | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException`    |
-| 404 (Not Found)         | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\NotFoundException`        |
-| 429 (Too Many Requests) | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\TooManyRequestsException` |
-| 5xx (Server Errors)     | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ServerErrorException`     |
+| **Status Code**         | **Exception**                                                              |
+|-------------------------|----------------------------------------------------------------------------|
+| 400 (Bad Request)       | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\BadRequestException`       |
+| 401 (Unauthorized)      | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\UnauthorizedException`     |
+| 403 (Forbidden)         | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ForbiddenException`        |
+| 404 (Not Found)         | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\NotFoundException`         |
+| 429 (Too Many Requests) | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\TooManyRequestsException`  |
+| 5xx (Server Errors)     | `AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ServerErrorException`      |
 
 ## Credits
 - [Abdelhamid Errahmouni](https://github.com/abdelhamiderrahmouni)

@@ -3,6 +3,7 @@
 namespace AbdelhamidErrahmouni\LaravelDailyco\Endpoints;
 
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\BadRequestException;
+use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ForbiddenException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\NotFoundException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ServerErrorException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\TooManyRequestsException;
@@ -12,6 +13,7 @@ trait MeetingTokens
 {
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function createMeetingToken(array $data = [])
     {
@@ -20,6 +22,7 @@ trait MeetingTokens
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function meetingToken(string $meetingToken, array $data = [])
     {

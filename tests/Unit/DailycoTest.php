@@ -40,7 +40,8 @@ describe('HTTP Methods', function () {
         Http::fake(['api.daily.co/*' => Http::response(['name' => 'updated-room'], 200)]);
 
         // Create a test class with a public put method
-        $dailyco = new class('test-key') extends Dailyco {
+        $dailyco = new class('test-key') extends Dailyco
+        {
             public function testPut(string $endpoint, array $data = []): mixed
             {
                 return $this->put($endpoint, $data);
@@ -57,7 +58,8 @@ describe('HTTP Methods', function () {
     it('sends PATCH request with correct method', function () {
         Http::fake(['api.daily.co/*' => Http::response(['name' => 'patched-room'], 200)]);
 
-        $dailyco = new class('test-key') extends Dailyco {
+        $dailyco = new class('test-key') extends Dailyco
+        {
             public function testPatch(string $endpoint, array $data = []): mixed
             {
                 return $this->patch($endpoint, $data);
@@ -100,7 +102,7 @@ describe('API Key Handling', function () {
         config(['dailyco.token' => 'config-api-key']);
         Http::fake(['api.daily.co/*' => Http::response(['data' => []], 200)]);
 
-        $dailyco = new Dailyco();
+        $dailyco = new Dailyco;
         $dailyco->rooms();
 
         Http::assertSent(function ($request) {

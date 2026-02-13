@@ -3,6 +3,7 @@
 namespace AbdelhamidErrahmouni\LaravelDailyco\Endpoints;
 
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\BadRequestException;
+use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ForbiddenException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\NotFoundException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\ServerErrorException;
 use AbdelhamidErrahmouni\LaravelDailyco\Exceptions\TooManyRequestsException;
@@ -12,6 +13,7 @@ trait Recordings
 {
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function recordings(array $data = [])
     {
@@ -20,6 +22,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function recording(string $recordingId, array $data = [])
     {
@@ -30,6 +33,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function deleteRecording(string $recordingId, array $data = [])
     {
@@ -40,6 +44,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function recordingAccessLink(string $recordingId, array $data = [])
     {
@@ -50,6 +55,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function recordingDownload(string $shareToken, array $data = [])
     {
@@ -60,6 +66,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function createRecordingCompositesRecipe(string $recordingId, array $data = [])
     {
@@ -70,6 +77,7 @@ trait Recordings
 
     /**
      * @throws ServerErrorException|TooManyRequestsException|BadRequestException|NotFoundException|UnauthorizedException
+     * @throws ForbiddenException
      */
     public function recordingComposites(string $recordingId, array $data = [])
     {
