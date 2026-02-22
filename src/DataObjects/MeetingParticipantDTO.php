@@ -18,6 +18,7 @@ class MeetingParticipantDTO
      * Create a DTO from API response array.
      *
      * @param array<string, mixed> $data
+     * @throws \Exception
      */
     public static function fromArray(array $data): self
     {
