@@ -12,12 +12,18 @@ use Illuminate\Support\Facades\Http;
 
 class Dailyco
 {
+    use Endpoints\BatchProcessor;
+    use Endpoints\DialinConfig;
+    use Endpoints\DomainConfig;
     use Endpoints\Logs;
     use Endpoints\Meetings;
     use Endpoints\MeetingTokens;
+    use Endpoints\PhoneNumbers;
     use Endpoints\Presence;
     use Endpoints\Recordings;
     use Endpoints\Rooms;
+    use Endpoints\Transcripts;
+    use Endpoints\Webhooks;
 
     public function __construct(
         private readonly ?string $apiKey = null,
@@ -83,14 +89,21 @@ class Dailyco
 
         $response = Http::withHeaders($headers)->{$method}($endpoint, $data);
 
-        return match ($response->status()) {
-            200 => $response->json(),
-            400 => throw new BadRequestException("Daily API: Bad Request - {$endpoint}"),
-            401 => throw new UnauthorizedException("Daily API: Unauthorized - {$endpoint}"),
-            403 => throw new ForbiddenException("Daily API: Forbidden - {$endpoint}"),
-            404 => throw new NotFoundException("Daily API: 404 Not Found - {$endpoint}"),
-            429 => throw new TooManyRequestsException("Daily API: Too Many Requests - {$endpoint}"),
-            default => throw new ServerErrorException("Daily API: Server Error - {$endpoint}"),
+        $status = $response->status();
+
+        if ($status >= 200 && $status < 300) {
+            return $response->json();
+        }
+
+        $errorMessage = $response->json('info') ?? $response->body();
+
+        match ($status) {
+            400 => throw new BadRequestException("Daily API: Bad Request - {$endpoint}. Info: {$errorMessage}"),
+            401 => throw new UnauthorizedException("Daily API: Unauthorized - {$endpoint}. Info: {$errorMessage}"),
+            403 => throw new ForbiddenException("Daily API: Forbidden - {$endpoint}. Info: {$errorMessage}"),
+            404 => throw new NotFoundException("Daily API: 404 Not Found - {$endpoint}. Info: {$errorMessage}"),
+            429 => throw new TooManyRequestsException("Daily API: Too Many Requests - {$endpoint}. Info: {$errorMessage}"),
+            default => throw new ServerErrorException("Daily API: Server Error - {$endpoint}. Status: {$status}. Info: {$errorMessage}"),
         };
     }
 }

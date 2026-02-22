@@ -61,4 +61,70 @@ trait Rooms
 
         return $this->delete("rooms/{$roomName}", $data);
     }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function roomPresence(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->get("rooms/{$roomName}/presence", $data);
+    }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function sendAppMessage(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->post("rooms/{$roomName}/send-app-message", $data);
+    }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function roomSessionData(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->get("rooms/{$roomName}/get-session-data", $data);
+    }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function setRoomSessionData(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->post("rooms/{$roomName}/set-session-data", $data);
+    }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function ejectParticipant(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->post("rooms/{$roomName}/eject", $data);
+    }
+
+    /**
+     * @throws TooManyRequestsException|BadRequestException|NotFoundException
+     * @throws ForbiddenException|UnauthorizedException|ServerErrorException
+     */
+    public function updateParticipantPermissions(string $roomName, array $data = [])
+    {
+        $roomName = rawurlencode($roomName);
+
+        return $this->post("rooms/{$roomName}/update-permissions", $data);
+    }
 }
