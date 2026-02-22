@@ -2,9 +2,10 @@
 
 namespace AbdelhamidErrahmouni\LaravelDailyco\DataObjects;
 
+use AbdelhamidErrahmouni\LaravelDailyco\Contracts\DailycoDataObject;
 use DateTimeImmutable;
 
-class MeetingParticipantDTO
+class MeetingParticipantDTO implements DailycoDataObject
 {
     public function __construct(
         public ?string $userId,
@@ -17,7 +18,8 @@ class MeetingParticipantDTO
     /**
      * Create a DTO from API response array.
      *
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
+     *
      * @throws \Exception
      */
     public static function fromArray(array $data): self

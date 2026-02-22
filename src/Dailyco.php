@@ -30,6 +30,14 @@ class Dailyco
     ) {}
 
     /**
+     * Return a new DailycoRequest instance that returns DTOs instead of arrays.
+     */
+    public function withDto(): DailycoRequest
+    {
+        return new DailycoRequest($this);
+    }
+
+    /**
      * @throws TooManyRequestsException|BadRequestException|NotFoundException
      * @throws ForbiddenException|UnauthorizedException|ServerErrorException
      */
