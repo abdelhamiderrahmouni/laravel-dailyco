@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.1) (2026-02-23)
+
+### Features
+
+- Add Content-Type header for JSON requests ([b614e46](https://github.com/abdelhamiderrahmouni/laravel-dailyco/commit/b614e462873c5b774f6805f6a575858d8af25876))
 ## [0.1.0](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.0) (2026-02-22)
 
 ### Features
