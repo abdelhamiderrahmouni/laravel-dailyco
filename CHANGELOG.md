@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.2) (2026-02-23)
+
+### Documentation
+
+- Update README to indicate DAILYCO_DOMAIN as optional ([08e5de6](https://github.com/abdelhamiderrahmouni/laravel-dailyco/commit/08e5de63075f56cff86db3e5423c723ee7326405))
 ## [0.1.1](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.1) (2026-02-23)
 
 ### Features
