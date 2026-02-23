@@ -31,7 +31,7 @@ Add your API key to your `.env` file:
 
 ```env
 DAILYCO_API_KEY=your-api-key-here
-DAILYCO_DOMAIN=your-domain-here
+DAILYCO_DOMAIN=your-domain-here # Optional
 ```
 
 Optionally publish the configuration file:
