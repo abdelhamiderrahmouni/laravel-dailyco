@@ -93,6 +93,7 @@ class Dailyco
 
         $headers = array_merge($headers, [
             'Authorization' => 'Bearer '.$apiKey,
+            'Content-Type' => 'application/json',
         ]);
 
         $response = Http::withHeaders($headers)->{$method}($endpoint, $data);
