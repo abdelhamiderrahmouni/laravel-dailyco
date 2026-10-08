@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Features
+
+- Add Laravel 13 support with Testbench 11, Pest 4, and PHPUnit 12 compatibility.
+
 ## [0.1.2](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.2) (2026-02-23)
 
 ### Documentation

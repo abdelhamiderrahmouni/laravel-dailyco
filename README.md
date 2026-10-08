@@ -17,7 +17,7 @@ An unofficial Laravel SDK for [Daily.co](https://daily.co)'s REST API. This pack
 ## Requirements
 
 - PHP 8.1 or higher
-- Laravel 10, 11, or 12
+- Laravel 10, 11, 12, or 13 (Laravel 13 requires PHP 8.3 or higher)
 
 ## Installation
 
