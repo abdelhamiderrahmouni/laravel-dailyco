@@ -2,12 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## [0.2.0](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.2.0) (2026-10-08)
 
 ### Features
 
-- Add Laravel 13 support with Testbench 11, Pest 4, and PHPUnit 12 compatibility.
-
+- shipmark config ([9fc9a10](https://github.com/abdelhamiderrahmouni/laravel-dailyco/commit/9fc9a103fb67e2243fad03904b5ca6131b561fcc))
+- add Laravel 13 support ([6cb8de1](https://github.com/abdelhamiderrahmouni/laravel-dailyco/commit/6cb8de16034098ae60d73ae3ebd92057d50477b6))
 ## [0.1.2](https://github.com/abdelhamiderrahmouni/laravel-dailyco/releases/tag/v0.1.2) (2026-02-23)
 
 ### Documentation
